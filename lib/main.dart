@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -59,6 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderRadius: BorderRadius.circular(8),
               ),
 
+
               child: const Center(
                 child: Text("Ini adalah contoh penggunaan container",
 
@@ -78,7 +81,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
               ElevatedButton(
                   onPressed: () {
-                    print("elevated button di tekan");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => GaleriPage()),
+                    );
                   },
                   child:  const Text('Tombol elavated '),
               ),
@@ -123,3 +129,122 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 
+
+
+class GaleriPage extends StatefulWidget {
+  const GaleriPage({super.key});
+
+  @override
+  State<GaleriPage> createState() => _GaleriPageState();
+}
+
+class _GaleriPageState extends State<GaleriPage> {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Galeri Foto', style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.blue,
+
+      ),
+      body: Center(
+        child: Column(
+          children: [
+
+            Image.asset(
+              'assets/picsumPFN2.jpg',
+              width: 500,
+              alignment: Alignment.topCenter,
+              fit: BoxFit.cover,
+            ),
+
+            SizedBox(height: 30,),
+
+            Text("Jalan Di Barcelona", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+
+            SizedBox(height: 30,),
+
+            Container(
+              width: 370,
+              height: 100,
+              padding: const EdgeInsets.symmetric(
+                vertical: 1,
+              ),
+              decoration: BoxDecoration(color: Colors.grey),
+
+              child: Stack(
+                children: [
+                   Container(
+                    color: Colors.white,
+                    width: 370,
+                    height: 100,
+                    padding: EdgeInsets.all(16),
+                    child: Column(
+                      children: [
+                        Row(
+                            children: [
+                        Icon(Icons.location_on, color: Colors.red, size: 30,),
+                        Text("Lokasi : Barcelona, Spanyol"),
+                          ]
+                        ),
+                        
+                        SizedBox(height: 2),
+
+                        Row(
+                          children: [
+                            Icon(Icons.calendar_month, color: Colors.blue, size: 30,),
+                            Text("Publikasi : 13 Agustus 2013"),
+
+                          ]
+                        )
+                      ],
+                    ),
+
+                  ),
+                ],
+              ),
+
+            ),
+
+
+            SizedBox(height: 20),
+
+
+            Container(
+              width: 370,
+              height: 100,
+              
+              child: Stack(
+                children: [
+                  Container(
+                    width: 370,
+                    height: 100,
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text("Deskripsi", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                           Expanded(child: Text("Sebuah persimpangan jalan di Barcelona, Spanyol. Foto ini menampilkan berbagai kendaraan yang bergerak dalam arah yang berbeda, menciptakan pemandangan yang sibuk dan energik.", style: TextStyle(fontSize: 12),))
+                          ],
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            )
+            
+
+
+
+          ],
+        ),
+      ),
+    );
+  }
+}

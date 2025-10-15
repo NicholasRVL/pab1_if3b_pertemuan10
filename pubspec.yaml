@@ -54,6 +54,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/picsumPFN.jpg
+    - assets/picsumPFN2.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

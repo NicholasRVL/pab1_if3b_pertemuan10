@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
-      home: const MyHomePage(title: 'Widget Demo Home Page'),
+      home: const MyHomePage(title: 'Widget Demo'),
     );
   }
 }
@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children:[
 
             Container(
-              width: double.infinity,
+              width: 400,
               height: 200,
               margin: const EdgeInsets.all(16),
               padding: const EdgeInsets.all(16),
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
 
               child: const Center(
-                child: Text("Container",
+                child: Text("Ini adalah contoh penggunaan container",
 
                 style: TextStyle(
                   color: Colors.white,
@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     print("elevated button di tekan");
                   },
-                  child:  const Text('elevated button'),
+                  child:  const Text('Tombol elavated '),
               ),
 
             const SizedBox(height: 20),
@@ -103,7 +103,15 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
 
             ],
-          )
+          ),
+
+            const SizedBox(height: 20),
+            Image.asset(
+              'assets/picsumPFN.jpg',
+                  width: 400,
+                 height: 250,
+              fit: BoxFit.cover,
+            ),
 
 
           ]
@@ -113,3 +121,5 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+
